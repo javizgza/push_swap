@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checkingisvalid.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:04:57 by jazarago          #+#    #+#             */
-/*   Updated: 2023/12/19 16:49:14 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/01/04 11:01:03 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,19 +59,4 @@ int	ft_checkingisvalid(char **argv, int	i, int	j)
 		i++;
 	}
 	return (1);
-}
-
-int main(int argc, char **argv) {
-    if (argc < 2) {
-        printf("no args\n");
-        return (1);
-    }
-
-    if (ft_checkingisvalid(argv, 1, 0)) {
-        printf("ok.\n");
-    } else {
-        printf("no ok\n");
-    }
-
-    return (0);
 }

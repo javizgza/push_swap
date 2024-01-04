@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 18:00:42 by jazarago          #+#    #+#             */
-/*   Updated: 2023/12/18 18:07:07 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/01/04 11:01:03 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include	<unistd.h>
 #include	<string.h>
 #include	<stdlib.h>
+#include	"../Libft copia/libft.h"
 
 typedef struct s_list
 {

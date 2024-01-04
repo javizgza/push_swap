@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checkingtheargs.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 14:57:17 by jazarago          #+#    #+#             */
-/*   Updated: 2023/12/19 15:56:16 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/01/04 11:01:03 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ int	alpha_checkings(char **argv)
 int ft_checkingtheargs(char **argv)
 {
 	alpha_checkings(argv);
-	
+	if (!ft_checkingisvalid)
+		return (0);
+	return (1);
 }
