@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   movesa.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 18:25:07 by javi              #+#    #+#             */
-/*   Updated: 2024/01/04 10:59:15 by javi             ###   ########.fr       */
+/*   Updated: 2024/01/12 09:48:23 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_ra(t_stack **a, int i)
+void	ft_ra(t_stack **a, int i)
 {
 	t_stack *mov;
 
@@ -30,7 +30,7 @@ void ft_ra(t_stack **a, int i)
 		write(1, "rotate a", 8);
 }
 
-void ft_sa(t_stack **a, int i)
+void	ft_sa(t_stack **a, int i)
 {
 	t_stack	*mov;
 
@@ -47,7 +47,7 @@ void ft_sa(t_stack **a, int i)
 		write(1, "swap a", 6)
 }
 
-void ft_rra(t_stack **a, int i)
+void	ft_rra(t_stack **a, int i)
 {
 	t_stack	**a;
 
@@ -55,22 +55,28 @@ void ft_rra(t_stack **a, int i)
 		ft_error();
 	while (a)
 	{
-
+		mov = *a;
+		*a = ft_lstlast(*a);
+		*a->prev = mov;
+		*a = mov->prev;
+		mov->prev = NULL;
 	}
+	if (i == 0)
+		write(1, "reverse rotate a", 16);
 }
 
-void ft_pa(t_stack **a, t_stack **b, int i)
+void	ft_pa(t_stack **a, t_stack **b, int i)
 {
-	t_stack	**mov;
+	t_stack	*mov;
 
 	if (!b)
 		ft_error();
 	while (a)
 	{
-		mov = *b;
-		*a = *b;
-		*b = *b->next;
-		*a->next = mov;
+		mov = *a;
+		*a = *a->next;
+		*a->next = *b->next;
+		*b->next = mov;
 	}
 	if (i == 0)
 		write(1, "push a", 6);

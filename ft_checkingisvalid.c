@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checkingisvalid.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:04:57 by jazarago          #+#    #+#             */
-/*   Updated: 2024/01/04 11:01:03 by javi             ###   ########.fr       */
+/*   Updated: 2024/01/12 09:57:39 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_isaspace(int	c)
 	return (0);
 }
 
-int	ft_isasign(int	c)
+int	ft_isasign(int c)
 {
 	if (c == '+' || c == '-')
 		return (c);
@@ -33,7 +33,7 @@ int	ft_isanumber(int	c)
 	return (0);
 }
 
-int	ft_checkingisvalid(char **argv, int	i, int	j)
+int	ft_checkingisvalid(char **argv, int i, int j)
 {
 	while (argv[i])
 	{

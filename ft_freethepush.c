@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_stack_b.c                                :+:      :+:    :+:   */
+/*   ft_freethepush.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/16 18:30:41 by jazarago          #+#    #+#             */
-/*   Updated: 2023/12/18 18:05:48 by jazarago         ###   ########.fr       */
+/*   Created: 2024/01/11 12:10:44 by jazarago          #+#    #+#             */
+/*   Updated: 2024/01/12 09:53:15 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-t_stack ft_stack_b(int content)
+void	ft_free(t_stack **stack)
 {
-    t_stack *new_stack;
+	t_stack *mov;
 
-    new_stack = malloc(sizeof (t_stack));
-    if (!new_stack)
-        ft_error();
-	new_stack->nbr = content;
-	new_stack->next = NULL;
-	return (new_stack);
+	if (!*mov)
+		ft_error();
+	while (*stack)
+	{
+		mov = *stack;
+		*stack = *stack->next;
+		*stack = *stack->nbr;
+		ft_free(*stack);
+		*stack = mov;
+	}
 }
-
-// this function creates the new stack that allows the swapping //

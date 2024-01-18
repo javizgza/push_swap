@@ -1,20 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_write_error.c                                   :+:      :+:    :+:   */
+/*   ft_finds.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/16 17:55:58 by jazarago          #+#    #+#             */
-/*   Updated: 2024/01/09 12:28:20 by jazarago         ###   ########.fr       */
+/*   Created: 2024/01/12 11:41:25 by jazarago          #+#    #+#             */
+/*   Updated: 2024/01/12 12:29:58 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void    ft_error(void)
+int	ft_smallestnumber(t_stack *a)
 {
-    write(1, "Error\n", 6);
+	int	i;
+
+	i = a->nbr;
+	while (a)
+	{
+		if (a->nbr < i)
+			i = a->nbr;
+		a = a->next;
+	}
+	return (i);
 }
 
-// this function only writes 'error' when it has to //
+int	ft_biggestnumber(t_stack *a)
+{
+	int	i;
+
+	i = a->nbr;
+	while (a)
+	{
+		if (a->nbr > i)
+			i = a->nbr;
+		a = a->next;
+	}
+	return (i);
+}
