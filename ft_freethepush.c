@@ -6,11 +6,11 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:10:44 by jazarago          #+#    #+#             */
-/*   Updated: 2024/01/12 09:53:15 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/01/30 11:17:30 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_free(t_stack **stack)
+void	ft_freethepush(t_stack **stack)
 {
 	t_stack *mov;
 
@@ -21,7 +21,7 @@ void	ft_free(t_stack **stack)
 		mov = *stack;
 		*stack = *stack->next;
 		*stack = *stack->nbr;
-		ft_free(*stack);
+		free(*stack);
 		*stack = mov;
 	}
 }

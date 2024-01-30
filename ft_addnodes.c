@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_addnodeandlist.c                                :+:      :+:    :+:   */
+/*   ft_addnodes.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 16:31:05 by jazarago          #+#    #+#             */
-/*   Updated: 2024/01/30 12:43:04 by jazarago         ###   ########.fr       */
+/*   Created: 2024/01/27 18:25:18 by jazarago          #+#    #+#             */
+/*   Updated: 2024/01/30 10:30:01 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"push_swap.h"
+#include    "push_swap.h"
 
-void	ft_addnums(char **argv, t_stack **a)
+void	ft_addnodes(t_stack **stack, t_stack **new)
 {
-	int c;
-	
-	c = 1;
-	while (*a)
-	{
-		int	num;
-
-		num = ft_new_atoi(argv[c]);
-		if (num != 0)
-		{
-			t_stack	*node;
-			
-			node = NULL;
-			node = node->next;
-			node->next = node->nbr;
-		}
-		num++;
-	}
-	c++;
+	if (!stack)
+		ft_error();
+	if (!*stack)
+		*stack = new;
+	else
+		ft_lstlast(*stack)->next = new;
 }
