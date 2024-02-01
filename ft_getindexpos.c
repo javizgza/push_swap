@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_getindexpos.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 17:03:21 by jazarago          #+#    #+#             */
-/*   Updated: 2024/01/30 11:03:53 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/02/01 10:22:32 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
-void	ft_expectedposition(t_stack **stacka, int in, int expec, int goal)
+int	ft_expectedposition(t_stack **stacka, int in, int expec, int goal)
 {
 	t_stack	*mov;
 	
@@ -59,16 +59,16 @@ void	ft_getindex(t_stack **s)
 void	ft_getindexpos(t_stack **stacka, t_stack **stackb)
 {
 	t_stack	*mov;
-	int	pos;
+	int	position;
 
 	mov = *stackb;
 	ft_getindex(stacka);
 	ft_getindex(stackb);
-	pos = 0;
+	position = 0;
 	while (mov)
 	{
-		pos = ft_expectedposition(stacka, mov->position, INT_MAX, pos);
-		mov->pos = pos;
+		position = ft_expectedposition(stacka, mov->position, INT_MAX, position);
+		mov->position = position;
 		mov = mov->next;
 	}
 }

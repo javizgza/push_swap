@@ -3,18 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+         #
+#    By: javi <javi@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/29 18:39:54 by jazarago          #+#    #+#              #
-#    Updated: 2024/01/30 12:10:22 by jazarago         ###   ########.fr        #
+#    Updated: 2024/02/01 10:03:40 by javi             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRC = push_swap.c	\
-		ft_addnodeandlist.c \
-		ft_addnodes.c \
 		ft_algfourandfive.c \
 		ft_checkingisvalid.c \
 		ft_checkingtheargs.c \
@@ -33,6 +31,7 @@ SRC = push_swap.c	\
 		movesa.c \
 		movesb.c \
 		movesboth.c \
+		libft_functions.c \
 
 OBJ = $(SRC:.c=.o)
 

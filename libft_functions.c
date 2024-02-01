@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_duplicatenum.c                                  :+:      :+:    :+:   */
+/*   libft_functions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/29 17:41:36 by javi              #+#    #+#             */
-/*   Updated: 2024/01/31 20:06:12 by javi             ###   ########.fr       */
+/*   Created: 2024/02/01 09:57:56 by javi              #+#    #+#             */
+/*   Updated: 2024/02/01 10:02:10 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
-int	ft_duplicatenum(t_stack *a)
+int	stacksize(t_stack *stack)
 {
-	t_stack	*ckd;
+	int	size;
 
-	while (a)
+	size = 0;
+	if (!stack)
+		return (0);
+	while (stack)
 	{
-		ckd = ckd->next;
-		while (ckd)
-		{
-			if (ckd->nbr == a->nbr)
-				return (1);
-			ckd = ckd->next;
-		}
-		a = a->next;
+		stack = stack->next;
+		size++;
 	}
-	return (0);
+	return (size);
+}
+
+t_stack	*ft_lstlast(t_stack *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

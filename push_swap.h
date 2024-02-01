@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 18:00:42 by jazarago          #+#    #+#             */
-/*   Updated: 2024/01/30 12:37:51 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/02/01 10:23:26 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 #include	<string.h>
 #include	<stdlib.h>
 #include	<limits.h>
-#include	"../Libft/libft.h"
 
 typedef struct s_stack
 {
@@ -49,7 +48,6 @@ void	ft_rr(t_stack **a, t_stack **b, int i);
 void	ft_ss(t_stack **a, t_stack **b, int i);
 void	ft_rrr(t_stack **a, t_stack ***b, int i);
 void	ft_freethepush(t_stack **stack);
-void	ft_addnums(char **argv, t_stack **a);
 int		ft_isaspace(int	c);
 int		ft_isasign(int c);
 int		ft_isanumber(int c);
@@ -57,19 +55,18 @@ int		ft_checkingisvalid(char **argv, int i, int j);
 int 	ft_ordercheck(t_stack *stacka);
 void	ft_resolve(t_stack **stacka);
 void	ft_resolvewhenthree(t_stack **stacka);
-void	ft_resolvelotofnums(t_stack **a, t_stack **b, int i);
-void	ft_addnodes(t_stack **stack, t_stack **new);
-void	ft_fourbiggerthanfive(t_stack **stacka, int i);
-void	ft_algforfive(t_stack **stacka, int i);
-void	ft_algforfour(t_stack **stacka, int i);
+void	ft_resolvelotofnums(t_stack **a, t_stack **b);
+void	ft_fourbiggerthanfive(t_stack **stacka);
+void	ft_algforfive(t_stack **stacka);
+void	ft_algforfour(t_stack **stacka);
 int		ft_isalpha(int c);
-int		alpha_checkings(char **argv);
+void	alpha_checkings(char **argv);
 int 	ft_checkingtheargs(char **argv);
 int		ft_smallestnumber(t_stack *a);
 int		ft_biggestnumber(t_stack *a);
 void	ft_getindexpos(t_stack **stacka, t_stack **stackb);
 void	ft_getindex(t_stack **s);
-void	ft_expectedposition(t_stack **stacka, int in, int expec, int goal);
+int		ft_expectedposition(t_stack **stacka, int in, int expec, int goal);
 void	ft_lessmoves(t_stack **a, t_stack **b);
 int		absolute(int i);
 void	ft_manymoves(t_stack **stacka, t_stack **stackb);
@@ -88,5 +85,9 @@ void	rotate_b(t_stack **b, int *many);
 void	rotate_a(t_stack **a, int *many);
 void	rotate_both(t_stack **a, t_stack **b, int *manya, int *manyb);
 void	reverse_both(t_stack **a, t_stack **b, int *manya, int *manyb);
+t_stack	*ft_lstlast(t_stack *lst);
+int		stacksize(t_stack *stack);
+
+
 
 #endif

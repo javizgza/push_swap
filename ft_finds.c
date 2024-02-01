@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_finds.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:41:25 by jazarago          #+#    #+#             */
-/*   Updated: 2024/01/27 17:43:07 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/02/01 10:14:43 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include	"push_swap.h"
 
 int	ft_smallestnumber(t_stack *a)
 {
@@ -38,18 +40,18 @@ int	ft_biggestnumber(t_stack *a)
 	return (i);
 }
 
-int	ft_findnumposition(t_stack *a, int i)
+int	ft_findnumposition(t_stack *a, int nbr)
 {
-	int	i;
+	int	j;
 
-	i = 0;
+	j = 0;
 	while (a->nbr != nbr)
 	{
-		i++;
+		j++;
 		a = a->next;
 	}
 	a->position = 0;
-	return (i);
+	return (j);
 }
 
 int	ft_positionnumb(t_stack *b, int getnbr)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_manymoves.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:02:12 by jazarago          #+#    #+#             */
-/*   Updated: 2024/01/29 18:32:21 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/02/01 10:24:40 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_manymoves(t_stack **stacka, t_stack **stackb)
 	mova = *stacka;
 	movb = *stackb;
 	lengtha = ft_lstsize(stacka);
-	lengthb = ft_lstsize(*stackb);
+	lengthb = ft_lstsize(stackb);
 	while (movb)
 	{
 		movb->manyb = movb->index;

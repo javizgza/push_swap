@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checkingisvalid.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:04:57 by jazarago          #+#    #+#             */
-/*   Updated: 2024/01/12 09:57:39 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:16:29 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_isasign(int c)
 
 int	ft_isanumber(int	c)
 {
-	if (c >= 48 || c <= 57)
+	if (c >= 48 && c <= 57)
 		return (c);
 	return (0);
 }
