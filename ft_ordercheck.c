@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ordercheck.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:49:33 by jazarago          #+#    #+#             */
-/*   Updated: 2024/01/04 11:01:03 by javi             ###   ########.fr       */
+/*   Updated: 2024/02/01 12:50:57 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include	"push_swap.h"
 
 int ft_ordercheck(t_stack *stacka)
 {

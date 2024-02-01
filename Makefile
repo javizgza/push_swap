@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: javi <javi@student.42.fr>                  +#+  +:+       +#+         #
+#    By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/29 18:39:54 by jazarago          #+#    #+#              #
-#    Updated: 2024/02/01 10:03:40 by javi             ###   ########.fr        #
+#    Updated: 2024/02/01 14:37:36 by jazarago         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ $(NAME) : $(OBJ) push_swap.h
 				@ar rc $(NAME) $(OBJ)
 
 clean:
-	@$(RM)$(OBJ)
+	@$(RM) *.o
 
 fclean: clean
 	@$(RM) $(NAME)

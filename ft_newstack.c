@@ -6,13 +6,13 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:38:19 by jazarago          #+#    #+#             */
-/*   Updated: 2024/01/09 16:52:28 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:09:53 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
-t_stack	ft_stack(int stack)
+t_stack	*ft_stack(int stack)
 {
 	t_stack	*newstack;
 	

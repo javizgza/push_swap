@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_resolve.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 09:45:26 by jazarago          #+#    #+#             */
-/*   Updated: 2024/02/01 09:47:26 by javi             ###   ########.fr       */
+/*   Updated: 2024/02/01 13:51:26 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
-void	ft_resolvewhenfive(t_stack **a, int i)
+void	ft_resolvewhenfive(t_stack **stacka)
 {
-	(ft_algforfive(*stacka));
+	(ft_algforfive(stacka));
 }
 
-void	ft_resolvewhenfour(t_stack **a, int i)
+void	ft_resolvewhenfour(t_stack **stacka)
 {
-	(ft_algforfour(*stacka));
+	(ft_algforfour(stacka));
 }
 
 void	ft_resolvewhenthree(t_stack **stacka)
@@ -38,7 +38,7 @@ void	ft_resolvewhenthree(t_stack **stacka)
 	else if (ft_smallestnumber(*stacka) != (*stacka)->nbr
 			&& ft_biggestnumber(*stacka) != (*stacka)->nbr)
 	{
-		ft_rra(*stacka, 0);
+		ft_rra(stacka, 0);
 			if (!ft_ordercheck(*stacka))
 			{
 				ft_rra(stacka, 0);
@@ -51,7 +51,6 @@ void	ft_resolvewhenthree(t_stack **stacka)
 void	ft_resolve(t_stack **stacka)
 {
 	t_stack *stackb;
-	int i;
 	
 	stackb = NULL;
 	while (ft_lstsize(*stacka) == 2)
@@ -62,13 +61,13 @@ void	ft_resolve(t_stack **stacka)
 	while (ft_lstsize(*stacka) == 3)
 	{
 		if (!ft_ordercheck(*stacka))
-			ft_resolvewhenthree(*stacka);
+			ft_resolvewhenthree(stacka);
 	}
 	while (ft_lstsize(*stacka) == 4)
 	{
 		if (!ft_ordercheck(*stacka))
-			ft_resolvewhenfour(*stacka);
+			ft_resolvewhenfour(stacka);
 	}
 	while (ft_lstsize(*stacka) == 5)
-		(ft_resolveforfiveormore(*stacka))
+		(ft_resolvewhenfive(stacka));
 }

@@ -6,7 +6,7 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 19:09:23 by javi              #+#    #+#             */
-/*   Updated: 2024/01/12 09:48:40 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:24:08 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ void	ft_rb(t_stack **b, int i)
 {
 	t_stack *mov;
 
-	if (!*b || !*b->next)
+	if (!*b || !(*b)->next)
 		ft_error();
 	while (b)
 	{
 		mov = *b;
-		*b = ft_lstlast(b);
-		*b->next = mov;
+		*b = ft_lstlast(*b);
+		(*b)->next = mov;
 		*b = mov->next;
 		mov->next = NULL;
 	}
@@ -34,29 +34,32 @@ void	ft_sb(t_stack **b, int i)
 {
 	t_stack *mov;
 
-	if (!*b || !*b->next)
+	if (!*b || !(*b)->next)
 		ft_error();
 	while (b)
 	{
-
+		mov = *b;
+		*b =(*b)->next;
+		mov->next = (*b)->next;
+		(*b)->next = mov;
 	}
-	if (i = 0)
-		write(1, "swap b", 6)
+	if (i == 0)
+		write(1, "swap b", 6);
 }
 
 void	ft_rrb(t_stack **b, int i)
 {
 	t_stack	*mov;
 
-	if (!*b || !*b->next)
+	if (!*b || !(*b)->next)
 		ft_error();
 	while (*b)
 	{
 		mov = *b;
-		b = ft_lstlast(*b);
-		*b->prev = mov;
-		*b = *mov->prev;
-		*mov->prev = NULL;
+		*b = ft_lstlast(*b);
+		(*b)->prev = mov;
+		*b = mov->prev;
+		mov->prev = NULL;
 	}
 	if (i == 0)
 		write(1, "reverse rotate b", 16);
@@ -71,9 +74,9 @@ void	ft_pb(t_stack **a, t_stack **b, int i)
 	while (*b)
 	{
 		mov = *b;
-		*b = *b->next;
-		*b->next = *a->next;
-		*a->next = mov;
+		*b = (*b)->next;
+		(*b)->next = (*a)->next;
+		(*a)->next = mov;
 	}
 	if (i == 0)
 		write(1, "push b", 6);

@@ -6,13 +6,13 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:08:47 by jazarago          #+#    #+#             */
-/*   Updated: 2024/01/29 18:36:52 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:54:32 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
-void	finish(t_stack **stacka)
+void	ft_finish(t_stack **stacka)
 {
 	int	sma;
 	int	size;
@@ -23,7 +23,7 @@ void	finish(t_stack **stacka)
 	{
 		while (sma < size)
 		{
-			ft_rra(stacka);
+			ft_rra(stacka, 0);
 			sma++;
 		}
 	}
@@ -31,7 +31,7 @@ void	finish(t_stack **stacka)
 	{
 		while (sma > 0)
 		{
-			ft_ra(*stacka);
+			ft_ra(stacka, 0);
 			sma--;
 		}
 	}
@@ -48,13 +48,13 @@ void	ft_push_mid_to_b(t_stack **stacka, t_stack **stackb)
 	i = 0;
 	while (size >= 6 && i < size && numofp < size / 2)
 	{
-		if (*stacka->position <= size / 2)
+		if ((*stacka)->position <= size / 2)
 		{
-			ft_pb(stacka, stackb);
+			ft_pb(stacka, stackb, 0);
 			numofp++;
 		}
 		else
-			ft_ra(stacka);
+			ft_ra(stacka, 0);
 			i++;
 	}
 }

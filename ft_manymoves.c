@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_manymoves.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:02:12 by jazarago          #+#    #+#             */
-/*   Updated: 2024/02/01 10:24:40 by javi             ###   ########.fr       */
+/*   Updated: 2024/02/01 12:49:49 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ void	ft_manymoves(t_stack **stacka, t_stack **stackb)
 
 	mova = *stacka;
 	movb = *stackb;
-	lengtha = ft_lstsize(stacka);
-	lengthb = ft_lstsize(stackb);
+	lengtha = ft_lstsize(*stacka);
+	lengthb = ft_lstsize(*stackb);
 	while (movb)
 	{
 		movb->manyb = movb->index;
 		if (movb->index > lengthb / 2)
 			movb->manyb = (lengthb - movb->index) * -1;
-		movb->manya = movb->goal;
-		if (movb->goal > lengtha / 2)
-			movb->manya = (lengtha - movb->goal) * -1;
+		movb->manya = movb->exp;
+		if (movb->exp > lengtha / 2)
+			movb->manya = (lengtha - movb->exp) * -1;
 		movb = movb->next;
 	}
 }
@@ -42,7 +42,7 @@ int	absolute(int i)
 	return (i);
 }
 
-void	ft_lessmoves(t_stack **a, t_stack **b)
+void	ft_lessmoves(t_stack **stacka, t_stack **stackb)
 {
 	t_stack	*mov;
 	int		lessmoves;
