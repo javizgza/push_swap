@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 18:00:42 by jazarago          #+#    #+#             */
-/*   Updated: 2024/02/01 14:31:30 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/02/06 10:18:45 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,5 @@ int		ft_atoi(const char *str);
 void	list_args(char **argv, t_stack **stack_a);
 char	**ft_split(char const *s, char c);
 void	ft_freetheargs(char **argv);
-
-
 
 #endif
