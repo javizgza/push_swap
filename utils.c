@@ -6,7 +6,7 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 16:39:28 by jazarago          #+#    #+#             */
-/*   Updated: 2024/04/17 16:27:55 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/04/27 10:07:51 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_stack **ft_complete_stk(char **argv, int large, int i)
 	stk = (t_stack **)ft_calloc((large), sizeof(t_stack **));
 	while (i < large)
 	{		
-		stk_newnode = (t_stack **)ft_calloc((large), sizeof(t_stack **));
+		stk_newnode = *(t_stack **)ft_calloc((large), sizeof(t_stack **));
 		if (stk_newnode == NULL)
 		{
 			free(stk_newnode);
@@ -53,4 +53,17 @@ int ft_order_check(t_stack *stka)
 		stka = stka->next;
 	}
 	return (1);
+}
+
+t_stack *ft_stacklast(t_stack *stk)
+{
+    if (stk == NULL) 
+	{
+        return NULL;
+    }
+    while (stk->next != NULL) 
+	{
+        stk = stk->next;
+    }
+    return (stk);
 }

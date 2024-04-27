@@ -6,7 +6,7 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:31:24 by jazarago          #+#    #+#             */
-/*   Updated: 2024/04/19 18:21:18 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/04/27 10:45:23 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	ft_validargs(int argc, char **argv)
 	while (nums[i])
 	{
 		content = ft_atoi(nums[i]);
+		printf("Hola");
 		if (!ft_notnumber(nums[i]))
 			ft_error("Error");
 		if (content < -2147483648 || content > 2147483647)

@@ -6,7 +6,7 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:36:45 by jazarago          #+#    #+#             */
-/*   Updated: 2024/04/16 19:19:21 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/04/27 09:55:24 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_ra(t_stack **a, int i)
 	while (a)
 	{
 		mov = (*a);
-		(*a) = ft_lstlast(*a);
+		(*a) = ft_stacklast(*a);
 		(*a)->next = mov;
 		(*a) = mov->next;
 		mov->next = NULL;
