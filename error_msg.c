@@ -6,7 +6,7 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:33:18 by jazarago          #+#    #+#             */
-/*   Updated: 2024/04/27 10:41:42 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/05/26 12:55:23 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_error(char *msg)
 {
-	printf("Error\n%s\n", msg);
+	printf("%s\n", msg);
 	exit(0);
 }

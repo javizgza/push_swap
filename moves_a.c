@@ -6,7 +6,7 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:36:45 by jazarago          #+#    #+#             */
-/*   Updated: 2024/04/27 09:55:24 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/05/01 19:38:07 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_ra(t_stack **a, int i)
 		mov->next = NULL;
 	}
 	if (i == 0)
-		write(1, "ra", 8);
+		write(1, "ra", 2);
 }
 
 void	ft_sa(t_stack **a, int i)
@@ -44,7 +44,7 @@ void	ft_sa(t_stack **a, int i)
 		(*a)->next = mov;
 	}
 	if (i == 0)
-		write(1, "sa", 6);
+		write(1, "sa", 2);
 }
 
 void	ft_rra(t_stack **a, int j)
@@ -69,7 +69,7 @@ void	ft_rra(t_stack **a, int j)
 	}
 	mov->next = NULL;
 	if (j == 0)
-		write(1, "rra\n", 16);
+		write(1, "rra\n", 4);
 }
 
 void	ft_pa(t_stack **a, t_stack **b, int i)
@@ -86,5 +86,5 @@ void	ft_pa(t_stack **a, t_stack **b, int i)
 		(*b)->next = mov;
 	}
 	if (i == 0)
-		write(1, "pa", 6);
+		write(1, "pa", 2);
 }
