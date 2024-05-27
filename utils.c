@@ -6,7 +6,7 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 16:39:28 by jazarago          #+#    #+#             */
-/*   Updated: 2024/05/26 13:45:44 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/05/27 16:18:57 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,23 @@ t_stack **ft_complete_stk(char **argv, int large, int i)
     if (!stk)
         ft_error("Null stk");
 
-    while (i < large)
-    {		
-        stk_newnode = (t_stack *)ft_calloc(1, sizeof(t_stack));
-        if (!stk_newnode)
-        {
-            free(stk);
-            ft_error("Null stk");
-        }
-        stk_newnode->number = ft_atoi(argv[i + 1]);  // Change argvalue to number
-        stk_newnode->next = NULL;  // Initialize the next pointer to NULL
-        stk[i] = stk_newnode;
-        i++;
+   while (i < large)
+{		
+    stk_newnode = (t_stack *)ft_calloc(1, sizeof(t_stack));
+    if (!stk_newnode)
+    {
+        free(stk);
+        ft_error("Failed to allocate memory for new node");
     }
+
+    // Assuming argv[i] contains the number you want to add to the stack
+    stk_newnode->number = atoi(argv[i]); // Convert string to integer
+
+    // Add the new node to the stack
+    stk[i] = stk_newnode;
+
+    i++;
+}
 
     return stk;
 }

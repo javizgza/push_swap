@@ -6,86 +6,63 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 13:13:48 by javi              #+#    #+#             */
-/*   Updated: 2023/10/17 12:19:25 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/05/27 17:58:24 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_words(char const *s, char c)
+static void	ft_allocate(char **result, char const *s, char c)
 {
-	int		i;
-	int		count;
+	char const	*aux;
 
-	i = 0;
-	count = 0;
-	while (s[i])
+	aux = s;
+	while (*aux)
 	{
-		if (s[i] != c)
+		while (*s == c)
+			s += 1;
+		aux = s;
+		while (*aux && *aux != c)
+			aux += 1;
+		if (*aux == c || aux > s)
 		{
-			count++;
-			while (s[i] != c && s[i])
-				i++;
+			*result = ft_substr(s, 0, aux - s);
+			s = aux;
+			result += 1;
 		}
-		else
-			i++;
 	}
-	return (count);
+	*result = NULL;
 }
 
-static int	ft_word_len(char const *s, char c)
+static int	ft_speclen(char const *str, char c)
 {
-	int		i;
+	int	i;
+	int	counter;
 
 	i = 0;
-	while (s[i] != c && s[i])
-		i++;
-	return (i);
-}
-
-static char	*ft_free(char **str, int j)
-{
-	while (j--)
-		free(str[j]);
-	free(str);
-	return (NULL);
-}
-
-static char	**ft_fill(char const *s, char c, char **str)
-{
-	int		i;
-	int		j;
-	int		k;
-
-	i = 0;
-	j = 0;
-	while (s[i])
+	counter = 0;
+	while (str[i])
 	{
-		if (s[i] != c)
-		{
-			k = 0;
-			str[j] = malloc(sizeof(char) * (ft_word_len(&s[i], c) + 1));
-			if (!str[j])
-				ft_free(str, j);
-			while (s[i] != c && s[i])
-				str[j][k++] = s[i++];
-			str[j++][k] = '\0';
-		}
-		else
-			i++;
+		if (str[i] != c)
+			counter += 1;
+		while (str[i] != c && str[i])
+			i += 1;
+		i += 1;
 	}
-	str[j] = NULL;
-	return (str);
+	return (counter);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**str;
+	char	**result;
+	int		size;
 
 	if (!s)
 		return (NULL);
-	str = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
-	if (!str)
+	size = ft_speclen(s, c);
+	result = (char **)malloc(sizeof(char *) * (size + 1));
+	if (!result)
 		return (NULL);
-	return (ft_fill(s, c, str));
+	ft_allocate(result, s, c);
+	return (result);
 }

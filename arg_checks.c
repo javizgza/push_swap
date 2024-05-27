@@ -6,7 +6,7 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:31:24 by jazarago          #+#    #+#             */
-/*   Updated: 2024/05/26 13:03:47 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/05/27 18:07:12 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_validargs(int argc, char **argv)
     if (argc == 1)
         return 0;
 
-    if (argc == 2)
+    if (argc >= 2)
         nums = ft_split(argv[1], ' ');
     else
         nums = argv + 1;
@@ -37,7 +37,7 @@ int	ft_validargs(int argc, char **argv)
 		i++;
     }
 
-    if (argc == 2)
+    if (argc >= 2)
         ft_free_args(nums);
     return 1;
 }

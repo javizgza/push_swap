@@ -6,7 +6,7 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:22:04 by jazarago          #+#    #+#             */
-/*   Updated: 2024/04/27 10:01:56 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/05/27 18:08:55 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,21 @@
 
 t_stack **ft_parse(int argc, char **argv)
 {
-    char **stk_large;
-    int i = 0;  // Inicializa i
-    int c = 0;  // Inicializa c
+    char **stk_large = NULL;
+    int i = 0;  // Initialize i
+    int c = 0;  // Initialize c
     t_stack **stk;
     
-    if (argc == 2) {
-        stk_large = ft_split(argv[1], ' ');  // Corrige el delimitador a un char
+    if (argc >= 2) {
+        stk_large = ft_split(argv[1], ' ');  // Correct the delimiter to a char
         while (stk_large[c]) {
-            c++;  // Incrementa c para cada elemento en stk_large
+            c++;  // Increment c for each element in stk_large
         }
+        stk = ft_complete_stk(stk_large, c, i);  // Assume that c is the number of elements
     } else {
-        c = argc - 1;  // Si argc != 2, el número de argumentos válidos es argc - 1 (excluyendo el nombre del programa)
+        c = argc - 1;  // If argc != 2, the number of valid arguments is argc - 1 (excluding the program name)
+        stk = ft_complete_stk(argv, c, i);  // Assume that c is the number of elements
     }
 
-    stk = ft_complete_stk(argv, c, i);  // Asume que c es la cantidad de elementos
     return stk;
 }

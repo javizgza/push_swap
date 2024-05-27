@@ -6,35 +6,65 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:26:25 by jazarago          #+#    #+#             */
-/*   Updated: 2023/09/27 14:31:14 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/05/27 18:04:01 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+static int	ft_check_space(char first)
+{
+	if (first == '\n')
+		return (1);
+	else if (first == '\t')
+		return (1);
+	else if (first == '\v')
+		return (1);
+	else if (first == '\f')
+		return (1);
+	else if (first == '\r')
+		return (1);
+	else if (first == ' ')
+		return (1);
+	return (0);
+}
+
+long	ft_part(const char *str, long num, int sig)
 {
 	int	i;
-	int	neg;
-	int	res;
 
-	res = 0;
-	neg = 1;
 	i = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	while (str[i])
 	{
-		if (str[i] == '-')
-			neg = -neg;
-		i++;
+		if (ft_check_space(str[i]) == 0)
+			break ;
+		i += 1;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	if (str[i] == '-')
 	{
-		res *= 10;
-		res += str[i] - '0';
-		i++;
+		sig *= -1;
+		i += 1;
 	}
-	res *= neg;
-	return (res);
+	else if (str[i] == '+')
+		i += 1;
+	while (str[i])
+	{
+		if (str[i] >= 48 && str[i] <= 57)
+			num = (str[i] - '0') + (num * 10);
+		else
+			break ;
+		i += 1;
+	}
+	return (num * sig);
 }
+
+int	ft_atoi(const char *str)
+{
+	long	num;
+	int		sig;
+
+	num = 0;
+	sig = 1;
+	return (num = ft_part(str, num, sig));
+}
+
