@@ -3,63 +3,61 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 10:17:22 by jazarago          #+#    #+#             */
-/*   Updated: 2024/04/27 10:21:25 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/06/11 18:54:02 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
-# include "Libft/libft.h"
+#define PUSH_SWAP_H
 
+#include <unistd.h>
+#include <stdlib.h>
+#include <limits.h>
+#include "Libft/libft.h"
+#include "stack/stack.h"
+#include "operations/operations.h"
 
-typedef struct s_stack
-{
-	long			number;
-	struct s_stack	*next;
-	struct s_stack	*prev;
-	int				argvalue;
-	int				first_stk_num;
-	int				highest_num;
-	int				size;
-	int				upper;
-	int				counter;
-}					t_stack;
-
-
-/* FUNCTIONS */
-t_stack *ft_stacklast(t_stack *stk);
-int	ft_size_stk_a(t_stack *stk);
-t_stack **ft_complete_stk(char **argv, int large, int i);
-int ft_order_check(t_stack *stka);
-void ft_sort_two(t_stack **stka);
-int ft_highest_num(t_stack *stka);
-void ft_sort_three(t_stack **stka);
-t_stack **ft_parse(int argc, char **argv);
-void	ft_rr(t_stack **a, t_stack **b, int i);
-void	ft_ss(t_stack **a, t_stack **b, int i);
-void	ft_rrr(t_stack **a, t_stack **b, int i);
-void	ft_pb(t_stack **a, t_stack **b, int i);
-void	ft_rrb(t_stack **b, int j);
-void	ft_sb(t_stack **b, int i);
-void	ft_rb(t_stack **b, int i);
-void	ft_ra(t_stack **a, int i);
-void	ft_sa(t_stack **a, int i);
-void	ft_rra(t_stack **a, int j);
-void	ft_pa(t_stack **a, t_stack **b, int i);
-void	ft_free_stk(t_stack **stk);
-void	ft_free_args(char **str);
-void	ft_error(char *msg);
-t_stack	**ft_stk_b(t_stack **stack_a);
-void ft_big_radix_sort(t_stack *a, t_stack *b) ;
-int	ft_bit_placement(int number, int i);
-int ft_max_num_bytes(t_stack *stk) ;
-int	ft_notnumber(char *str);
-int	ft_validargs(int argc, char **argv);
+int ft_validate_argument(char *argument);
+int ft_validate_arguments(char *argument);
+int ft_safe_atoi(const char *str, int *valid);
+long ft_parse_number(const char *str, long value, int *sign);
+int ft_is_space(char c);
+t_Stack *ft_add_elements(char **arguments);
+int ft_element_count(char **items);
+int ft_load_elements_into_stack(t_Stack *stack, char **items);
+void ft_execute_sort(t_Stack *stack_a, t_Stack *stack_b);
+void ft_sort_three_elements(t_Stack *stack_a);
+void ft_sort_four_or_five(t_Stack *stack_a, t_Stack *stack_b);
+void ft_large_sort(t_Stack *stack_a, t_Stack *stack_b);
+void ft_swap_a(t_Stack *stack_a);
+void ft_swap_b(t_Stack *stack_b);
+void ft_swap_both(t_Stack *stack_a, t_Stack *stack_b);
+void ft_push_a(t_Stack *stack_a, t_Stack *stack_b);
+void ft_push_b(t_Stack *stack_b, t_Stack *stack_a);
+void ft_rotate_a(t_Stack *stack_a);
+void ft_rotate_b(t_Stack *stack_b);
+void ft_rotate_both(t_Stack *stack_a, t_Stack *stack_b);
+void ft_reverse_rotate_a(t_Stack *stack_a);
+void ft_reverse_rotate_b(t_Stack *stack_b);
+void ft_reverse_rotate_both(t_Stack *stack_a, t_Stack *stack_b);
+t_Node *ft_new_node(int value, int pos);
+void ft_remove_node(t_Node *node);
+t_Stack *ft_create_empty_stack(void);
+void ft_destroy_stack(t_Stack *stack);
+int ft_stack_push(t_Stack *stack, int value);
+void ft_pop(t_Stack *stack);
+int ft_is_max_on_top(t_Stack *stack);
+int ft_is_max_on_bottom(t_Stack *stack);
+t_Node *ft_find_min_node(t_Stack *stack);
+int ft_find_max_position(t_Stack *stack);
+void ft_assign_partial_positions(t_Stack *stack, t_Node *current, int *min_value);
+void ft_assign_positions(t_Stack *stack);
+int ft_validate_positions(t_Stack *stack);
+int ft_start(int arg_count, char **arg_values);
+int ft_execute(char **arguments);
+void get_leaks(void);
 
 #endif
