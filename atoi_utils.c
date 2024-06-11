@@ -6,13 +6,13 @@
 /*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 16:39:28 by jazarago          #+#    #+#             */
-/*   Updated: 2024/06/11 18:08:01 by javi             ###   ########.fr       */
+/*   Updated: 2024/06/11 21:52:10 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int ft_is_space(char c)
+int ft_is_space(char c)
 {
 	if (c == '\n')
 		return (1);

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+         #
+#    By: javi <javi@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 16:22:01 by jazarago          #+#    #+#              #
-#    Updated: 2024/04/27 10:42:21 by jazarago         ###   ########.fr        #
+#    Updated: 2024/06/11 23:13:02 by javi             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,10 @@ RM = rm -f
 
 LIB = ar rcs
 
-SRCS = program.c arg_checks.c big_sort_radix.c create_b.c error_msg.c \
-		free_functions.c moves_a.c moves_b.c moves_both.c parse.c \
-			small_sorts.c utils.c Libft/ft_atoi.c Libft/ft_split.c \
-				Libft/ft_calloc.c Libft/ft_bzero.c Libft/ft_isdigit.c \
+SRCS = program_main.c sorts_2.c utils.c atoi_utils.c sorts.c set_positions.c num_node_utils.c \
+		node_utils.c operations/moves_utils.c operations/moves_a.c operations/moves_b.c operations/moves_both.c ft_validations.c \
+			stack/stack_utils_2.c stack/stack_utils.c stack/stack.c Libft/ft_atoi.c Libft/ft_split.c \
+				Libft/ft_calloc.c Libft/ft_bzero.c Libft/ft_isdigit.c Libft/ft_substr.c Libft/ft_strlen.c Libft/ft_strdup.c Libft/ft_strlcpy.c\
 
 OBJTS = $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 10:17:22 by jazarago          #+#    #+#             */
-/*   Updated: 2024/06/11 18:54:02 by javi             ###   ########.fr       */
+/*   Updated: 2024/06/11 22:59:14 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,9 @@ int ft_validate_positions(t_Stack *stack);
 int ft_start(int arg_count, char **arg_values);
 int ft_execute(char **arguments);
 void get_leaks(void);
+void ft_perform_sort(t_Stack *stack_a, t_Stack *stack_b);
+int ft_is_sorted(t_Stack *stack);
+int ft_get_max_digits(t_Stack *stack);
+int ft_get_min_value(t_Stack *stack);
 
 #endif

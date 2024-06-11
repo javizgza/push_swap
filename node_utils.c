@@ -6,7 +6,7 @@
 /*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 18:25:37 by javi              #+#    #+#             */
-/*   Updated: 2024/06/11 18:26:46 by javi             ###   ########.fr       */
+/*   Updated: 2024/06/11 23:16:09 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void ft_remove_node(t_Node *node)
 	free(node);
 }
 
-t_Stack *ft_create_empty_stack(void)
+/*t_Stack *ft_create_empty_stack(void)
 {
 	t_Stack *stack;
 
@@ -41,12 +41,12 @@ t_Stack *ft_create_empty_stack(void)
 	stack->top = NULL;
 	stack->size = 0;
 	return (stack);
-}
+}*/
 
-void ft_destroy_stack(t_Stack *stack)
+/*void ft_destroy_stack(t_Stack *stack)
 {
 	while (stack->top)
 		ft_pop(stack);
 	free(stack);
-}
+}*/
 

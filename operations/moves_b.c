@@ -6,7 +6,7 @@
 /*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 18:21:41 by javi              #+#    #+#             */
-/*   Updated: 2024/06/11 18:22:19 by javi             ###   ########.fr       */
+/*   Updated: 2024/06/11 23:10:51 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,10 @@ void ft_rotate_b(t_Stack *stack_b)
 {
 	ft_rotate_top(stack_b);
 	write(1, "rb\n", 3);
+}
+
+void ft_reverse_rotate_b(t_Stack *stack_b)
+{
+    ft_reverse_rotate_top(stack_b);
+    write(1, "rrb\n", 4);
 }

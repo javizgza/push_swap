@@ -6,7 +6,7 @@
 /*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:35:55 by jazarago          #+#    #+#             */
-/*   Updated: 2024/06/11 18:52:33 by javi             ###   ########.fr       */
+/*   Updated: 2024/06/11 22:18:18 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void ft_large_sort(t_Stack *stack_a, t_Stack *stack_b)
 		counters[1] = 0;
 		while (counters[1] < stack_size)
 		{
-			if (ft_bit_check(stack_a->top->position, counters[0]))
+			if (ft_bit_check(stack_a->top->pos, counters[0]))
 				ft_rotate_a(stack_a);
 			else
 				ft_push_b(stack_b, stack_a);
