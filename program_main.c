@@ -6,7 +6,7 @@
 /*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:09:35 by jazarago          #+#    #+#             */
-/*   Updated: 2024/06/11 23:14:25 by javi             ###   ########.fr       */
+/*   Updated: 2024/06/11 23:30:22 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,31 +89,29 @@ int ft_execute(char **arguments)
 
 #include "push_swap.h"
 
+#include "push_swap.h" // Asegúrate de incluir el archivo de cabecera correcto
+
 int main(int argc, char **argv)
 {
+    char **args;
+
     if (argc > 1)
     {
-        // Verificar los argumentos pasados
-        for (int i = 1; i < argc; i++)
+        args = argv + 1; // Apuntar a los argumentos ignorando el nombre del programa
+        while (*args)
         {
-            if (!ft_validate_arguments(argv[i])) // Validación de argumentos
+            if (!ft_validate_arguments(*args)) // Usamos la función renombrada
             {
                 write(1, "Error\n", 6);
-                return 1;
+                return 0; // Terminar el programa con un error
             }
+            args++;
         }
-
-        // Ejecutar la lógica principal del programa
-        if (!ft_execute(argv))
-        {
-            write(1, "Error\n", 6);
-            return 1;
-        }
+        // Llamar a la función renombrada para ejecutar la lógica principal
+        return ft_execute(argv);
     }
-    else
-    {
-        write(1, "Error\n", 6);
-        return 1;
-    }
+    // Si no hay suficientes argumentos, mostrar "Error"
+    write(1, "Error\n", 6);
     return 0;
 }
+
