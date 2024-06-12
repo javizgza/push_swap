@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   program_main.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:09:35 by jazarago          #+#    #+#             */
-/*   Updated: 2024/06/12 11:57:44 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/06/12 23:06:34 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ int	ft_check_duplicates(t_Stack *stack)
 	current = stack->top;
 	while (current != NULL && current->next != NULL)
 	{
+		if (current->value < INT_MAX)
+		{
+			return (0);
+		}
 		runner = current->next;
 		while (runner != NULL)
 		{

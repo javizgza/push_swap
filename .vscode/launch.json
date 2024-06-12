@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/jazarago/42Madrid/push_swap",
-      "program": "/home/jazarago/42Madrid/push_swap/build/Debug/outDebug",
+      "cwd": "/Users/javi/42Madrid/push_swap",
+      "program": "/Users/javi/42Madrid/push_swap/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
