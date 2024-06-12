@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   atoi_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 16:39:28 by jazarago          #+#    #+#             */
-/*   Updated: 2024/06/11 21:52:10 by javi             ###   ########.fr       */
+/*   Updated: 2024/06/12 12:05:54 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_is_space(char c)
+int	ft_is_space(char c)
 {
 	if (c == '\n')
 		return (1);
@@ -29,17 +29,15 @@ int ft_is_space(char c)
 	return (0);
 }
 
-
-
-long ft_parse_number(const char *str, long value, int *sign)
+long	ft_parse_number(const char *str, long value, int *sign)
 {
-	int index;
+	int	index;
 
 	index = 0;
 	while (str[index])
 	{
 		if (ft_is_space(str[index]) == 0)
-			break;
+			break ;
 		index++;
 	}
 	if (str[index] == '-')
@@ -54,17 +52,16 @@ long ft_parse_number(const char *str, long value, int *sign)
 		if (str[index] >= '0' && str[index] <= '9')
 			value = (str[index] - '0') + (value * 10);
 		else
-			break;
+			break ;
 		index++;
 	}
 	return (value);
 }
 
-
-int ft_safe_atoi(const char *str, int *valid)
+int	ft_safe_atoi(const char *str, int *valid)
 {
-	long value;
-	int sign;
+	long	value;
+	int		sign;
 
 	value = 0;
 	sign = 1;

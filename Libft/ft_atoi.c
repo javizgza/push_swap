@@ -6,7 +6,7 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:26:25 by jazarago          #+#    #+#             */
-/*   Updated: 2024/05/27 18:04:01 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/06/12 11:14:40 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,3 @@ int	ft_atoi(const char *str)
 	sig = 1;
 	return (num = ft_part(str, num, sig));
 }
-

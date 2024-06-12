@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   num_node_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 18:30:50 by javi              #+#    #+#             */
-/*   Updated: 2024/06/11 18:32:05 by javi             ###   ########.fr       */
+/*   Updated: 2024/06/12 10:44:56 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_is_max_on_top(t_Stack *stack)
+int	ft_is_max_on_top(t_Stack *stack)
 {
-	t_Node *current;
-	int max_value;
+	t_Node	*current;
+	int		max_value;
 
 	current = stack->top->next;
 	max_value = stack->top->value;
@@ -31,11 +31,11 @@ int ft_is_max_on_top(t_Stack *stack)
 	return (0);
 }
 
-int ft_is_max_on_bottom(t_Stack *stack)
+int	ft_is_max_on_bottom(t_Stack *stack)
 {
-	t_Node *current;
-	int last_value;
-	int max_value;
+	t_Node	*current;
+	int		last_value;
+	int		max_value;
 
 	current = stack->top;
 	while (current->next)
@@ -55,11 +55,11 @@ int ft_is_max_on_bottom(t_Stack *stack)
 	return (0);
 }
 
-t_Node *ft_find_min_node(t_Stack *stack)
+t_Node	*ft_find_min_node(t_Stack *stack)
 {
-	t_Node *current;
-	t_Node *min_node;
-	int min_value;
+	t_Node	*current;
+	t_Node	*min_node;
+	int		min_value;
 
 	if (stack->size == 1)
 		return (stack->top);
@@ -78,10 +78,10 @@ t_Node *ft_find_min_node(t_Stack *stack)
 	return (min_node);
 }
 
-int ft_find_max_position(t_Stack *stack)
+int	ft_find_max_position(t_Stack *stack)
 {
-	t_Node *current;
-	int max_pos;
+	t_Node	*current;
+	int		max_pos;
 
 	current = stack->top;
 	max_pos = 0;

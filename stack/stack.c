@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 18:27:37 by javi              #+#    #+#             */
-/*   Updated: 2024/06/11 18:28:18 by javi             ###   ########.fr       */
+/*   Updated: 2024/06/12 11:06:01 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_Stack *ft_create_empty_stack(void)
+t_Stack	*ft_create_empty_stack(void)
 {
-	t_Stack *stack;
+	t_Stack	*stack;
 
 	stack = (t_Stack *)malloc(sizeof(t_Stack));
 	if (!stack)
@@ -24,16 +24,16 @@ t_Stack *ft_create_empty_stack(void)
 	return (stack);
 }
 
-void ft_destroy_stack(t_Stack *stack)
+void	ft_destroy_stack(t_Stack *stack)
 {
 	while (stack->top)
 		ft_pop(stack);
 	free(stack);
 }
 
-int ft_stack_push(t_Stack *stack, int value)
+int	ft_stack_push(t_Stack *stack, int value)
 {
-	t_Node *new_node;
+	t_Node	*new_node;
 
 	new_node = ft_new_node(value, 0);
 	new_node->next = stack->top;
@@ -42,9 +42,9 @@ int ft_stack_push(t_Stack *stack, int value)
 	return (1);
 }
 
-void ft_pop(t_Stack *stack)
+void	ft_pop(t_Stack *stack)
 {
-	t_Node *node_to_delete;
+	t_Node	*node_to_delete;
 
 	if (stack->top)
 	{

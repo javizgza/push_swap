@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   sorts.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:35:55 by jazarago          #+#    #+#             */
-/*   Updated: 2024/06/11 22:18:18 by javi             ###   ########.fr       */
+/*   Updated: 2024/06/12 10:58:44 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_execute_sort(t_Stack *stack_a, t_Stack *stack_b)
+void	ft_execute_sort(t_Stack *stack_a, t_Stack *stack_b)
 {
 	if (ft_is_sorted(stack_a) != 1)
 	{
@@ -27,7 +27,7 @@ void ft_execute_sort(t_Stack *stack_a, t_Stack *stack_b)
 	}
 }
 
-void ft_sort_three_elements(t_Stack *stack_a)
+void	ft_sort_three_elements(t_Stack *stack_a)
 {
 	if (ft_is_max_on_top(stack_a))
 		ft_rotate_a(stack_a);
@@ -39,9 +39,9 @@ void ft_sort_three_elements(t_Stack *stack_a)
 		ft_sort_three_elements(stack_a);
 }
 
-void ft_sort_four_or_five(t_Stack *stack_a, t_Stack *stack_b)
+void	ft_sort_four_or_five(t_Stack *stack_a, t_Stack *stack_b)
 {
-	int min_value;
+	int	min_value;
 
 	min_value = ft_get_min_value(stack_a);
 	if (stack_a->top->next->value == min_value)
@@ -57,12 +57,12 @@ void ft_sort_four_or_five(t_Stack *stack_a, t_Stack *stack_b)
 	ft_push_a(stack_a, stack_b);
 }
 
-int ft_bit_check(int num, int pos)
+int	ft_bit_check(int num, int pos)
 {
-    return (num >> pos) & 1;
+	return ((num >> pos) & 1);
 }
 
-void ft_large_sort(t_Stack *stack_a, t_Stack *stack_b)
+void	ft_large_sort(t_Stack *stack_a, t_Stack *stack_b)
 {
 	int	counters[2];
 	int	stack_size;

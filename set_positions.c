@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   set_positions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 18:36:55 by javi              #+#    #+#             */
-/*   Updated: 2024/06/11 18:37:50 by javi             ###   ########.fr       */
+/*   Updated: 2024/06/12 10:54:02 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_assign_partial_positions(t_Stack *stack, t_Node *current, int *min_value)
+void	ft_assign_partial_positions(t_Stack *stack, t_Node *current, \
+		int *min_value)
 {
-	t_Node *inner;
-	int smallest_gap;
+	t_Node	*inner;
+	int		smallest_gap;
 
 	smallest_gap = 0;
 	if (current->value > *min_value)
@@ -39,10 +40,10 @@ void ft_assign_partial_positions(t_Stack *stack, t_Node *current, int *min_value
 	}
 }
 
-void ft_assign_positions(t_Stack *stack)
+void	ft_assign_positions(t_Stack *stack)
 {
-	int min_value;
-	t_Node *current;
+	int		min_value;
+	t_Node	*current;
 
 	min_value = ft_find_min_node(stack)->value;
 	while (!ft_validate_positions(stack))
@@ -56,10 +57,10 @@ void ft_assign_positions(t_Stack *stack)
 	}
 }
 
-int ft_validate_positions(t_Stack *stack)
+int	ft_validate_positions(t_Stack *stack)
 {
-	t_Node *current;
-	int zero_positions;
+	t_Node	*current;
+	int		zero_positions;
 
 	current = stack->top;
 	zero_positions = 0;
@@ -73,4 +74,3 @@ int ft_validate_positions(t_Stack *stack)
 		return (0);
 	return (1);
 }
-

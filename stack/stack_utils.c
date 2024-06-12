@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 18:08:30 by javi              #+#    #+#             */
-/*   Updated: 2024/06/11 19:02:04 by javi             ###   ########.fr       */
+/*   Updated: 2024/06/12 11:03:38 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_Stack *ft_add_elements(char **arguments)
+t_Stack	*ft_add_elements(char **arguments)
 {
-	t_Stack *stack;
-	char **elements;
-	int count;
-	int index;
+	t_Stack	*stack;
+	char	**elements;
+	int		count;
+	int		index;
 
 	stack = ft_create_empty_stack();
 	if (!stack)
@@ -40,10 +40,10 @@ t_Stack *ft_add_elements(char **arguments)
 	return (stack);
 }
 
-int ft_element_count(char **items)
+int	ft_element_count(char **items)
 {
-	int index;
-	int count;
+	int	index;
+	int	count;
 
 	index = 0;
 	count = 0;
@@ -55,9 +55,9 @@ int ft_element_count(char **items)
 	return (count);
 }
 
-int ft_load_elements_into_stack(t_Stack *stack, char **items)
+int	ft_load_elements_into_stack(t_Stack *stack, char **items)
 {
-	int count;
+	int	count;
 
 	count = ft_element_count(items);
 	while (count)
@@ -71,9 +71,9 @@ int ft_load_elements_into_stack(t_Stack *stack, char **items)
 	return (1);
 }
 
-int ft_validate_arguments(char *argument)
+int	ft_validate_arguments(char *argument)
 {
-	char **segments;
+	char	**segments;
 
 	segments = ft_split(argument, ' ');
 	if (!segments)
@@ -86,10 +86,10 @@ int ft_validate_arguments(char *argument)
 	return (ft_validate_segments(segments));
 }
 
-int ft_validate_segments(char **segments)
+int	ft_validate_segments(char **segments)
 {
-	int index;
-	int error_count;
+	int	index;
+	int	error_count;
 
 	index = 0;
 	error_count = 0;
