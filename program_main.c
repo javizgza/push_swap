@@ -6,15 +6,29 @@
 /*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:09:35 by jazarago          #+#    #+#             */
-/*   Updated: 2024/06/12 23:06:34 by javi             ###   ########.fr       */
+/*   Updated: 2024/06/13 09:09:11 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	get_leaks(void)
+int	ft_check_int_max(t_Stack *stack)
 {
-	system("leaks -q a.out");
+	t_Node	*current;
+
+	if (!stack)
+		return (1);
+	current = stack->top;
+	while (current != NULL)
+	{
+		if (current->value > INT_MAX)
+		{
+			write(1, "Error\n", 6);
+			exit(1);
+		}
+		current = current->next;
+	}
+	return (1);
 }
 
 int	ft_check_duplicates(t_Stack *stack)
@@ -27,10 +41,6 @@ int	ft_check_duplicates(t_Stack *stack)
 	current = stack->top;
 	while (current != NULL && current->next != NULL)
 	{
-		if (current->value < INT_MAX)
-		{
-			return (0);
-		}
 		runner = current->next;
 		while (runner != NULL)
 		{
