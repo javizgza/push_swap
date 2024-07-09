@@ -6,17 +6,17 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 18:36:55 by javi              #+#    #+#             */
-/*   Updated: 2024/06/12 10:54:02 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/07/09 15:08:57 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	ft_assign_partial_positions(t_Stack *stack, t_Node *current, \
-		int *min_value)
+		long *min_value)
 {
 	t_Node	*inner;
-	int		smallest_gap;
+	long		smallest_gap;
 
 	smallest_gap = 0;
 	if (current->value > *min_value)
@@ -42,7 +42,7 @@ void	ft_assign_partial_positions(t_Stack *stack, t_Node *current, \
 
 void	ft_assign_positions(t_Stack *stack)
 {
-	int		min_value;
+	long		min_value;
 	t_Node	*current;
 
 	min_value = ft_find_min_node(stack)->value;

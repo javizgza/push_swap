@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   atoi_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 16:39:28 by jazarago          #+#    #+#             */
-/*   Updated: 2024/06/13 09:26:44 by javi             ###   ########.fr       */
+/*   Updated: 2024/07/09 14:03:38 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ int	ft_safe_atoi(const char *str, int *valid)
 	value = ft_parse_number(str, value, &sign);
 	if (value > ((long)INT_MAX + 1) && sign == -1)
 	{
-		printf("Error\n");
 		*valid = 0;
 	}
 	if (value > INT_MAX && sign == 1)

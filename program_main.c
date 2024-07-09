@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   program_main.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:09:35 by jazarago          #+#    #+#             */
-/*   Updated: 2024/06/13 09:09:11 by javi             ###   ########.fr       */
+/*   Updated: 2024/07/09 15:04:09 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	ft_check_int_max(t_Stack *stack)
 	current = stack->top;
 	while (current != NULL)
 	{
-		if (current->value > INT_MAX)
+		if (current->value > INT_MAX || current->value < INT_MIN)
 		{
-			write(1, "Error\n", 6);
+			write(2, "Error\n", 6);
 			exit(1);
 		}
 		current = current->next;
@@ -65,14 +65,14 @@ int	ft_start(int arg_count, char **arg_values)
 		{
 			if (!ft_validate_arguments(*args_aux))
 			{
-				write(1, "Error\n", 6);
+				write(2, "Error\n", 6);
 				return (0);
 			}
 			args_aux++;
 		}
 		return (ft_execute(arg_values));
 	}
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	return (0);
 }
 
@@ -85,9 +85,14 @@ int	ft_execute(char **arguments)
 	stack_b = ft_create_empty_stack();
 	if (!stack_a || !stack_b)
 		return (0);
+	if (!ft_check_int_max(stack_a))
+	{
+		write(2, "Error\n", 6);
+		return (0);
+	}
 	if (!ft_check_duplicates(stack_a))
 	{
-		printf("Error\n");
+		write(2, "Error\n", 6);
 		ft_destroy_stack(stack_a);
 		ft_destroy_stack(stack_b);
 		return (0);
@@ -110,7 +115,7 @@ int	main(int argc, char **argv)
 		{
 			if (!ft_validate_arguments(*args))
 			{
-				printf("Error\n");
+				write(2, "Error\n", 6);
 				return (0);
 			}
 			args++;

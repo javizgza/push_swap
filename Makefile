@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: javi <javi@student.42.fr>                  +#+  +:+       +#+         #
+#    By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 16:22:01 by jazarago          #+#    #+#              #
-#    Updated: 2024/06/11 23:13:02 by javi             ###   ########.fr        #
+#    Updated: 2024/07/09 11:22:38 by jazarago         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,6 @@ fclean: clean
 	$(RM) $(NAME)
 	$(RM) $(OBJTS)
 
-re: all clean
+re: fclean all
 
 .PHONY: all clean fclean re

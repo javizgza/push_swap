@@ -6,7 +6,7 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 18:27:37 by javi              #+#    #+#             */
-/*   Updated: 2024/06/12 11:06:01 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/07/09 11:53:14 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_destroy_stack(t_Stack *stack)
 	free(stack);
 }
 
-int	ft_stack_push(t_Stack *stack, int value)
+int	ft_stack_push(t_Stack *stack, long value)
 {
 	t_Node	*new_node;
 

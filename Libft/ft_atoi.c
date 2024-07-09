@@ -6,7 +6,7 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:26:25 by jazarago          #+#    #+#             */
-/*   Updated: 2024/06/12 11:14:40 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/07/09 11:54:21 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ long	ft_part(const char *str, long num, int sig)
 	return (num * sig);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	long	num;
 	int		sig;

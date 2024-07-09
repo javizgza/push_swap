@@ -6,13 +6,13 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 18:25:37 by javi              #+#    #+#             */
-/*   Updated: 2024/06/12 10:42:57 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/07/09 11:57:58 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_Node	*ft_new_node(int value, int pos)
+t_Node	*ft_new_node(long value, int pos)
 {
 	t_Node	*new_node;
 

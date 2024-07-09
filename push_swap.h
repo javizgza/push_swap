@@ -6,7 +6,7 @@
 /*   By: jazarago <jazarago@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 10:17:22 by jazarago          #+#    #+#             */
-/*   Updated: 2024/06/12 10:52:23 by jazarago         ###   ########.fr       */
+/*   Updated: 2024/07/09 15:09:20 by jazarago         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,18 @@ void	ft_rotate_both(t_Stack *stack_a, t_Stack *stack_b);
 void	ft_reverse_rotate_a(t_Stack *stack_a);
 void	ft_reverse_rotate_b(t_Stack *stack_b);
 void	ft_reverse_rotate_both(t_Stack *stack_a, t_Stack *stack_b);
-t_Node	*ft_new_node(int value, int pos);
+t_Node	*ft_new_node(long value, int pos);
 void	ft_remove_node(t_Node *node);
 t_Stack	*ft_create_empty_stack(void);
 void	ft_destroy_stack(t_Stack *stack);
-int		ft_stack_push(t_Stack *stack, int value);
+int		ft_stack_push(t_Stack *stack, long value);
 void	ft_pop(t_Stack *stack);
 int		ft_is_max_on_top(t_Stack *stack);
 int		ft_is_max_on_bottom(t_Stack *stack);
 t_Node	*ft_find_min_node(t_Stack *stack);
 int		ft_find_max_position(t_Stack *stack);
 void	ft_assign_partial_positions(t_Stack *stack, t_Node *current, \
-		int *min_value);
+		long *min_value);
 void	ft_assign_positions(t_Stack *stack);
 int		ft_validate_positions(t_Stack *stack);
 int		ft_start(int arg_count, char **arg_values);
@@ -64,5 +64,6 @@ void	ft_perform_sort(t_Stack *stack_a, t_Stack *stack_b);
 int		ft_is_sorted(t_Stack *stack);
 int		ft_get_max_digits(t_Stack *stack);
 int		ft_get_min_value(t_Stack *stack);
+int		ft_check_only_num(t_Stack *stack);
 
 #endif
